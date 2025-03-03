@@ -224,9 +224,9 @@ const HomePage = () => (
   <div className="min-h-screen bg-gradient-to-br from-slate-100 to-blue-100 p-8">
     <div className="max-w-4xl mx-auto text-center">
       <img
-        src="/profile.jpeg" // Add your profile photo to public folder
+        src="/profile1.JPG" // Add your profile photo to public folder
         alt="Vallari Ashar"
-        className="w-36 h-36 rounded-full mx-auto mb-8 border-4 border-white shadow-lg object-cover"
+        className="w-52 h-52 rounded-full mx-auto mb-8 border-4 border-white shadow-lg object-cover"
       />
       <h1 className="text-4xl font-bold mb-4">Vallari Ashar</h1>
       <p className="text-xl mb-4">B.Tech CSE Student @ VIT Chennai</p>
