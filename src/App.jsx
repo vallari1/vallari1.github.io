@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { BookOpen, Code, Heart, Camera,Wrench, Trophy, Home, User, Mail, Linkedin, Github } from 'lucide-react';
+import { BookOpen, Code, Heart, Camera,Wrench, Trophy, Home, User, Mail, Linkedin, Github ,Book} from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import BlogTab from './BlogTab'; 
 
 const Navigation = ({ activeTab, setActiveTab }) => {
   const tabs = [
-    { id: 'home', label: 'Home', icon: Home },
     { id: 'projects', label: 'Projects', icon: Code },
-    { id: 'research', label: 'Research', icon: BookOpen },
+    { id: 'research', label: 'Research and Patents', icon: BookOpen },
     { id: 'experience', label: 'Experience', icon: Wrench },
     { id: 'volunteering', label: 'Volunteering', icon: Heart },
     { id: 'achievements', label: 'Achievements', icon: Trophy },
+    //{ id: 'blog', label: 'Blog', icon: Book }, // Add blog tab
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
 
@@ -17,7 +18,12 @@ const Navigation = ({ activeTab, setActiveTab }) => {
     <nav className="bg-slate-900 text-white p-4 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <h1 className="text-xl font-bold mb-4 md:mb-0">Vallari Ashar</h1>
+        <h1 
+            onClick={() => setActiveTab('home')} 
+            className="text-xl font-bold mb-4 md:mb-0 cursor-pointer hover:text-blue-300 transition-colors"
+          >
+            Vallari Ashar
+          </h1>
           <div className="flex flex-wrap justify-center gap-2">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -231,7 +237,7 @@ const HomePage = () => (
           <Mail className="w-5 h-5" />
           Email
         </a>
-        <a href="https://linkedin.com" className="flex items-center gap-2 text-slate-700 hover:text-blue-600">
+        <a href="https://www.linkedin.com/in/vallari1/" className="flex items-center gap-2 text-slate-700 hover:text-blue-600">
           <Linkedin className="w-5 h-5" />
           LinkedIn
         </a>
@@ -267,7 +273,7 @@ const HomePage = () => (
 );
 
 const ProjectsTab = () => (
-  <div className="grid grid-flow-row grid-cols-3 gap-6 p-6">
+  <div className="grid grid-flow-row grid-cols-3 gap-6 p-6 relative">
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="relative">
         <img
@@ -401,7 +407,27 @@ const ResearchTab = () => (
         <span className="mr-4">October 2024</span>
       </div>
     </div>
+<br></br>
+    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="aspect-w-full aspect-h-full relative">
+        <img
+          src="/patent.png" // Add your project image to public/projects folder
+          alt="Patent"
+          className="w-full h-50 object-cover"
+        />
+      </div><br></br>
+      <h3 className="text-xl font-bold mb-2">A Portable Welding Inspection System & Method for Detecting Structural Defects by Inspecting Weld Material</h3>
+      <p className="text-sm text-blue-600 mb-4">IP Application Number: 202441097583</p>
+      <p className="text-gray-600 mb-4">
+      The present disclosure relates to a portable welding inspection system and method for detecting structural defects by inspecting weld material. The system (102) that detects structural defects in weld material using image-capturing units (108) and ultrasonic sensors (110) coupled to processors (104). The system (102) receives 10 visual data from the image-capturing units (108), including surface images, and ultrasonic data from ultrasonic sensors (110). The visual data is processed using a pre-stored convolutional neural network (CNN) and ultrasonic data using signal processing techniques. The system (102) detects spatial characteristics from the visual data, and temporal characteristics from the ultrasonic data
+      </p>
+      <div className="flex items-center text-sm text-gray-500">
+        <span className="mr-4">October 2024</span>
+      </div>
+    </div>
   </div>
+
+  
 );
 
 const ExperienceTab = () => (
@@ -419,8 +445,8 @@ const ExperienceTab = () => (
         <h3 className="text-xl font-bold mb-2">Team Captain</h3>
         <p className="text-gray-600 mb-2">Technocrats Robotics, Chennai | March 2023 – Present</p>
         <ul className="list-disc list-inside text-gray-600 space-y-2">
-          <li>Led team to DD ROBOCON Nationals</li>
-          <li>Developed autonomous omni-directional robot using ROS</li>
+          <li>Scored 100/100 in DD ROBOCON 2025 STAGE 1</li>
+          <li>Developed autonomous omni-directional robots using ROS</li>
           <li>Created robots with manual and autonomous capabilities using Raspberry Pi, Arduino, and ESPs</li>
         </ul>
       </div>
@@ -463,6 +489,33 @@ const VolunteeringTab = () => (
 const AchievementsTab = () => (
   <div className="max-w-4xl mx-auto p-6">
     <div className="space-y-6">
+    <div className="bg-white rounded-lg shadow-lg p-6">
+      <img
+          src="/stage1.png" // Add your project image to public/projects folder
+          alt="KIA Robotic Arm"
+          className="w-full h-50 object-cover"
+        /><br></br>
+        <Trophy className="w-8 h-8 text-yellow-500 mb-4" />
+        <h3 className="text-xl font-bold mb-2">DD ROBOCON 2025 stage 1</h3>
+        <p className="text-gray-600">
+          Scored 100/100 and secured 1st position out of 74 teams all over India in Stage 1
+        </p>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-6">
+      <img
+          src="/irc.jpg" // Add your project image to public/projects folder
+          alt="KIA Robotic Arm"
+          className="w-full h-50 object-cover"
+        /><br></br>
+        <Trophy className="w-8 h-8 text-yellow-500 mb-4" />
+        <h3 className="text-xl font-bold mb-2">International Rover Challenge</h3>
+        <p className="text-gray-600">
+          Among the top 20 teams from the 100+ registrations at BITS Goa
+        </p>
+      </div>
+
+
       <div className="bg-white rounded-lg shadow-lg p-6">
       <img
           src="/tcr.jpeg" // Add your project image to public/projects folder
@@ -470,7 +523,7 @@ const AchievementsTab = () => (
           className="w-full h-50 object-cover"
         /><br></br>
         <Trophy className="w-8 h-8 text-yellow-500 mb-4" />
-        <h3 className="text-xl font-bold mb-2">DD ROBOCON Nationals</h3>
+        <h3 className="text-xl font-bold mb-2">DD ROBOCON Nationals 2024</h3>
         <p className="text-gray-600">
           Advanced to nationals, competing with 100+ teams from across India
         </p>
@@ -519,7 +572,10 @@ const App = () => {
       case 'achievements':
         return <AchievementsTab />;
       case 'contact':
+      
         return <ContactTab />;
+      case 'blog':  // Add blog case
+        return <BlogTab />;
       default:
         return <HomePage />;
     }
