@@ -332,6 +332,15 @@ const HomePage = () => {
 const ProjectsTab = () => {
   const projects = [
     {
+      title: "Basketball Robots",
+      description: "Use basket tracking, localization and internal co-ordination. Have shooting mechansim, extension mechanism, and many others. Powered by STM32, and Jetson Nano.",
+      image: "/bots.jpeg",
+      tags: ["STM32", "Jetson Developement Kit", "SolidWorks", "ROS2", "Gazebo"],
+      date: "Jan - May 2025"
+    },
+    
+    
+    {
       title: "KIA - Open-source Robotic Arm",
       description: "Developed an open source robotic arm with bluetooth control and autonomous hand-shaking capabilities using computer vision. Visualized through MoveIt2 in Gazebo for smooth communication and movements.",
       image: "/kia.jpeg",
@@ -364,7 +373,7 @@ const ProjectsTab = () => {
       description: "Built an autonomous robot for field mapping and real-time crop disease detection using YOLO and ROS2, simulated in Gazebo with Ackermann-style navigation.",
       image: "/robot.jpeg",
       tags: ["Python", "C++", "YOLOv8", "OpenCV", "ROS2", "NAV2"],
-      date: "2023-2024"
+      date: "2023"
     }
   ];
 
@@ -482,7 +491,7 @@ const ExperienceTab = () => {
       company: "CASDIC, DRDO",
       location: "Bengaluru, KA",
       period: "May 2025 – July 2025",
-      image: "/autonomous.png",
+      image: "/casdic.jpeg",
       description: [
         "Worked on verification and validation of mission-critical embedded systems for next-generation fighter aircraft including Su-30 MKI upgrade programs",
         "Performed functional testing and diagnostics of flight control software on Xilinx Kintex-7 FPGA development boards using VHDL-based simulation and debugging tools",
@@ -495,7 +504,7 @@ const ExperienceTab = () => {
       company: "Technocrats Robotics",
       location: "Chennai, TN",
       period: "August 2024 – Present",
-      image: "/tcr-leads.jpeg",
+      image: "/capn.jpeg",
       description: [
         "Leading a self-funded team to national and international competitions, including the development basketball playing robots for DD ROBOCON",
         "Scored 100/100 in DD ROBOCON STAGE 1 2025, and secured 1st position among 84 national teams",
@@ -585,12 +594,52 @@ const VolunteeringTab = () => (
           </div>
         </div>
       </div>
+
+
+<br></br>
+
+<div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
+        <div className="flex items-center mb-4">
+          <Heart className="w-8 h-8 text-red-500 mr-4" />
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold">Speaker</h3>
+            <p className="text-gray-600">Empower Tech 2024| 3rd October 2023</p>
+          </div>
+        </div>
+        
+        <div className="space-y-4">
+          <div className="bg-blue-50 p-4 rounded-lg">
+            <h4 className="font-semibold text-blue-800 mb-2">Impact</h4>
+            <p className="text-blue-700">Invited to talk about robotics as a career, and the basics of how to approach the field as a beginner </p>
+          </div>
+          
+          <div className="bg-green-50 p-4 rounded-lg">
+            <h4 className="font-semibold text-green-800 mb-2">Collaboration</h4>
+            <p className="text-green-700">Judged the hackathon and ideathon phase of the workshop</p>
+          </div>
+          
+          <div className="bg-purple-50 p-4 rounded-lg">
+            <img
+              src="/profile.JPG"
+              alt="Empower Tech 2024"
+              className="w-full h-64 object-cover rounded-lg"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
 );
 
 const AchievementsTab = () => {
   const achievements = [
+    {
+      title: "DD ROBOCON 2025 Nationals",
+      description: "Competed with the best teams from  all over India @ IIT DELHI",
+      image: "/team.jpeg",
+      color: "from-red-400 to-red-600"
+    },
     {
       title: "DD ROBOCON 2025 Stage 1 - 1st Position",
       description: "Scored 100/100 and secured 1st position out of 84 teams all over India in Stage 1",
@@ -635,7 +684,7 @@ const AchievementsTab = () => {
                 <img
                   src={achievement.image}
                   alt={achievement.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-64 object-cover"
                 />
                 <div className={`absolute top-4 left-4 bg-gradient-to-r ${achievement.color} p-2 rounded-full`}>
                   <Trophy className="w-6 h-6 text-white" />
